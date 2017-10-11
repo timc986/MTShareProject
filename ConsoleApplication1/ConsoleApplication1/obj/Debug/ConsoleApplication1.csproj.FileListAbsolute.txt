@@ -8,3 +8,9 @@ C:\Users\user\Documents\GitHub\MTShareProject\ConsoleApplication1\ConsoleApplica
 C:\Users\user\Documents\GitHub\MTShareProject\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
 C:\Users\user\Documents\GitHub\MTShareProject\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
 C:\Users\user\Documents\GitHub\MTShareProject\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+C:\Users\user\Documents\GitHub\MTShareProject\ConsoleApplication1\ConsoleApplication1\bin\Debug\DynamicInterop.dll
+C:\Users\user\Documents\GitHub\MTShareProject\ConsoleApplication1\ConsoleApplication1\bin\Debug\RDotNet.dll
+C:\Users\user\Documents\GitHub\MTShareProject\ConsoleApplication1\ConsoleApplication1\bin\Debug\RDotNet.NativeLibrary.dll
+C:\Users\user\Documents\GitHub\MTShareProject\ConsoleApplication1\ConsoleApplication1\bin\Debug\DynamicInterop.xml
+C:\Users\user\Documents\GitHub\MTShareProject\ConsoleApplication1\ConsoleApplication1\bin\Debug\RDotNet.xml
+C:\Users\user\Documents\GitHub\MTShareProject\ConsoleApplication1\ConsoleApplication1\bin\Debug\RDotNet.NativeLibrary.xml

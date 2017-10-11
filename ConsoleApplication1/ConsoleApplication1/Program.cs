@@ -6,9 +6,7 @@ namespace ConsoleApplication1
     class Program
     {
         static void Main(string[] args)
-        {
-            RService();
-
+        {         
             //print out and read line 
             Console.WriteLine("Enter input:");
 
@@ -20,6 +18,7 @@ namespace ConsoleApplication1
             //useful command eg. R
 
             //try to run R in C#
+            RService();
         }
 
         static void RService()

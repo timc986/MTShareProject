@@ -14,3 +14,4 @@ C:\Users\user\Documents\GitHub\MTShareProject\ConsoleApplication1\ConsoleApplica
 C:\Users\user\Documents\GitHub\MTShareProject\ConsoleApplication1\ConsoleApplication1\bin\Debug\DynamicInterop.xml
 C:\Users\user\Documents\GitHub\MTShareProject\ConsoleApplication1\ConsoleApplication1\bin\Debug\RDotNet.xml
 C:\Users\user\Documents\GitHub\MTShareProject\ConsoleApplication1\ConsoleApplication1\bin\Debug\RDotNet.NativeLibrary.xml
+C:\Users\user\Documents\GitHub\MTShareProject\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.csprojResolveAssemblyReference.cache

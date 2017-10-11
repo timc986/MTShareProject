@@ -11,7 +11,11 @@ namespace ConsoleApplication1
         static void Main(string[] args)
         {
             //print out and read line 
+            Console.WriteLine("Enter input:");
 
+            string input = Console.ReadLine();
+
+            Console.WriteLine(input);
             //natrual language processing
 
             //useful command eg. R

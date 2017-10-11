@@ -10,6 +10,13 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
+            //print out and read line 
+
+            //natrual language processing
+
+            //useful command eg. R
+
+            //try to run R in C#
         }
     }
 }

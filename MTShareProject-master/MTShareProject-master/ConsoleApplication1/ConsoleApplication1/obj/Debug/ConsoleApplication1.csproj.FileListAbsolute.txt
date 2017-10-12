@@ -1,0 +1,29 @@
+c:\users\user\documents\visual studio 2015\Projects\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+c:\users\user\documents\visual studio 2015\Projects\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+c:\users\user\documents\visual studio 2015\Projects\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+c:\users\user\documents\visual studio 2015\Projects\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+c:\users\user\documents\visual studio 2015\Projects\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
+C:\Users\user\Documents\GitHub\MTShareProject\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+C:\Users\user\Documents\GitHub\MTShareProject\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+C:\Users\user\Documents\GitHub\MTShareProject\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
+C:\Users\user\Documents\GitHub\MTShareProject\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+C:\Users\user\Documents\GitHub\MTShareProject\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+C:\Users\user\Documents\GitHub\MTShareProject\ConsoleApplication1\ConsoleApplication1\bin\Debug\DynamicInterop.dll
+C:\Users\user\Documents\GitHub\MTShareProject\ConsoleApplication1\ConsoleApplication1\bin\Debug\RDotNet.dll
+C:\Users\user\Documents\GitHub\MTShareProject\ConsoleApplication1\ConsoleApplication1\bin\Debug\RDotNet.NativeLibrary.dll
+C:\Users\user\Documents\GitHub\MTShareProject\ConsoleApplication1\ConsoleApplication1\bin\Debug\DynamicInterop.xml
+C:\Users\user\Documents\GitHub\MTShareProject\ConsoleApplication1\ConsoleApplication1\bin\Debug\RDotNet.xml
+C:\Users\user\Documents\GitHub\MTShareProject\ConsoleApplication1\ConsoleApplication1\bin\Debug\RDotNet.NativeLibrary.xml
+C:\Users\user\Documents\GitHub\MTShareProject\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.csprojResolveAssemblyReference.cache
+C:\Users\Timothy.Chan\Downloads\MTShareProject-master\MTShareProject-master\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+C:\Users\Timothy.Chan\Downloads\MTShareProject-master\MTShareProject-master\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+C:\Users\Timothy.Chan\Downloads\MTShareProject-master\MTShareProject-master\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+C:\Users\Timothy.Chan\Downloads\MTShareProject-master\MTShareProject-master\ConsoleApplication1\ConsoleApplication1\bin\Debug\DynamicInterop.dll
+C:\Users\Timothy.Chan\Downloads\MTShareProject-master\MTShareProject-master\ConsoleApplication1\ConsoleApplication1\bin\Debug\RDotNet.dll
+C:\Users\Timothy.Chan\Downloads\MTShareProject-master\MTShareProject-master\ConsoleApplication1\ConsoleApplication1\bin\Debug\RDotNet.NativeLibrary.dll
+C:\Users\Timothy.Chan\Downloads\MTShareProject-master\MTShareProject-master\ConsoleApplication1\ConsoleApplication1\bin\Debug\DynamicInterop.xml
+C:\Users\Timothy.Chan\Downloads\MTShareProject-master\MTShareProject-master\ConsoleApplication1\ConsoleApplication1\bin\Debug\RDotNet.xml
+C:\Users\Timothy.Chan\Downloads\MTShareProject-master\MTShareProject-master\ConsoleApplication1\ConsoleApplication1\bin\Debug\RDotNet.NativeLibrary.xml
+C:\Users\Timothy.Chan\Downloads\MTShareProject-master\MTShareProject-master\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.csprojResolveAssemblyReference.cache
+C:\Users\Timothy.Chan\Downloads\MTShareProject-master\MTShareProject-master\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+C:\Users\Timothy.Chan\Downloads\MTShareProject-master\MTShareProject-master\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb

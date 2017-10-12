@@ -1,0 +1,730 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Takenet.Textc</name>
+    </assembly>
+    <members>
+        <member name="T:Takenet.Textc.Csdl.CsdlParser">
+            <summary>
+            Implements a parser for the Command Syntax Definition Language.
+            </summary>
+        </member>
+        <member name="M:Takenet.Textc.Csdl.CsdlParser.RegisterTokenType``1">
+            <summary>
+            Registers a token type.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <exception cref="T:System.ArgumentException">
+            </exception>
+        </member>
+        <member name="M:Takenet.Textc.Csdl.CsdlParser.UnregisterTokenType``1">
+            <summary>
+            Unregisters a token type.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <exception cref="T:System.ArgumentException">
+            </exception>
+        </member>
+        <member name="M:Takenet.Textc.Csdl.CsdlParser.Parse(System.String)">
+            <summary>
+            Parses a CSDL string into a instance of <see cref="T:Takenet.Textc.Syntax" />.
+            </summary>
+            <param name="syntaxPattern">The syntax pattern.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Textc.Csdl.CsdlParser.Parse(System.String,System.Globalization.CultureInfo)">
+            <summary>
+            Parses a CSDL string into a instance of <see cref="T:Takenet.Textc.Syntax" />.
+            </summary>
+            <param name="syntaxPattern">The syntax pattern.</param>
+            <param name="culture">The syntax culture.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Textc.Csdl.CsdlParser.CreateBasicSyntaxForMethod(System.Reflection.MethodInfo,System.Boolean,System.Boolean)">
+            <summary>
+            Creates a simple CSDL string for a method.
+            </summary>
+        </member>
+        <member name="T:Takenet.Textc.Csdl.CsdlSyntax">
+            <summary>
+            Represents a CSDL syntax instance.
+            </summary>
+        </member>
+        <member name="M:Takenet.Textc.Csdl.CsdlSyntax.GetSyntax(System.Collections.Generic.IDictionary{System.String,System.Type},System.Globalization.CultureInfo)">
+            <summary>
+            Converts to a <see cref="T:Takenet.Textc.Syntax" /> instance, using the provided token types.
+            </summary>
+            <param name="tokenTypeTypeDictionary">The token type dictionary.</param>
+            <param name="culture">The syntax culture.</param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentException">syntaxPattern</exception>
+        </member>
+        <member name="M:Takenet.Textc.Csdl.CsdlSyntax.ToString">
+            <summary>
+            Returns a <see cref="T:System.String" /> that represents this instance.
+            </summary>
+            <returns>
+            A <see cref="T:System.String" /> that represents this instance.
+            </returns>
+        </member>
+        <member name="T:Takenet.Textc.Csdl.CsdlToken">
+            <summary>
+            Represents a CSDL token.
+            </summary>
+        </member>
+        <member name="M:Takenet.Textc.Csdl.CsdlToken.ToString">
+            <summary>
+            Returns a <see cref="T:System.String" /> that represents this instance.
+            </summary>
+            <returns>
+            A <see cref="T:System.String" /> that represents this instance.
+            </returns>
+        </member>
+        <member name="M:Takenet.Textc.Csdl.CsdlToken.GetTokensFromPattern(System.String)">
+            <summary>
+            Gets the tokens from pattern.
+            </summary>
+            <param name="syntaxPattern">The syntax pattern.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Takenet.Textc.Csdl.ITokenTypeFactory">
+            <summary>
+            Defines a factory for token types.
+            </summary>
+        </member>
+        <member name="T:Takenet.Textc.Expression">
+            <summary>
+            Stores information of an extracted expression from the user input that was parsed with a syntax.
+            </summary>
+        </member>
+        <member name="M:Takenet.Textc.Expression.#ctor(Takenet.Textc.Token[],Takenet.Textc.Syntax,Takenet.Textc.IRequestContext,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Takenet.Textc.Expression" /> class.
+            </summary>
+        </member>
+        <member name="P:Takenet.Textc.Expression.Tokens">
+            <summary>
+            Gets the tokens that compose the expression.
+            </summary>
+        </member>
+        <member name="P:Takenet.Textc.Expression.Syntax">
+            <summary>
+            Gets the syntax that originated the expression.
+            </summary>
+        </member>
+        <member name="P:Takenet.Textc.Expression.Context">
+            <summary>
+            Gets the associated request context.
+            </summary>
+        </member>
+        <member name="P:Takenet.Textc.Expression.RemainingText">
+            <summary>
+            Gets the remaining input text that was not processed.
+            In case of perfect match syntaxes, this value is null.
+            </summary>
+        </member>
+        <member name="T:Takenet.Textc.IRequestContext">
+            <summary>
+            Represents a common context that can be used across multiple input commands processing.
+            The request context provide values to fill syntaxes tokens.
+            </summary>
+        </member>
+        <member name="P:Takenet.Textc.IRequestContext.Culture">
+            <summary>
+            Gets the context culture.
+            </summary>
+            <value>
+            The culture.
+            </value>
+        </member>
+        <member name="M:Takenet.Textc.IRequestContext.SetVariable(System.String,System.Object)">
+            <summary>
+            Sets a variable value.
+            </summary>
+            <param name="name">The variable name.</param>
+            <param name="value">The variable value.</param>
+        </member>
+        <member name="M:Takenet.Textc.IRequestContext.GetVariable(System.String)">
+            <summary>
+            Gets an existing variable value from the context.
+            </summary>
+            <param name="name">The variable name</param>
+            <returns>If the variable is defined, its value; otherwise null.</returns>
+        </member>
+        <member name="M:Takenet.Textc.IRequestContext.RemoveVariable(System.String)">
+            <summary>
+            Removes an existing variable.
+            </summary>
+            <param name="name">The variable name</param>
+        </member>
+        <member name="M:Takenet.Textc.IRequestContext.Clear">
+            <summary>
+            Clear all defined variables in the current context.
+            </summary>
+        </member>
+        <member name="T:Takenet.Textc.ISyntaxParser">
+            <summary>
+            Defines a service that parses a user input to a expression.
+            </summary>
+        </member>
+        <member name="M:Takenet.Textc.ISyntaxParser.TryParse(Takenet.Textc.ITextCursor,Takenet.Textc.Syntax,Takenet.Textc.IRequestContext,Takenet.Textc.Expression@)">
+            <summary>
+            Tries the parse the text cursor content using the provided syntax.
+            </summary>
+            <param name="textCursor">The text cursor.</param>
+            <param name="syntax">The syntax to be used.</param>
+            <param name="context">The request context.</param>
+            <param name="expression">The result expression.</param>
+            <returns>True if the input was parsed successfully; otherwise, false.</returns>
+        </member>
+        <member name="T:Takenet.Textc.ITextCursor">
+            <summary>
+            Defines a cursor service that extracts token from an input text.
+            </summary>
+        </member>
+        <member name="P:Takenet.Textc.ITextCursor.Context">
+            <summary>
+            Gets the context where the cursor was created.
+            </summary>
+        </member>
+        <member name="P:Takenet.Textc.ITextCursor.RightToLeftParsing">
+            <summary>
+            Gets the current parse direction.
+            </summary>
+        </member>
+        <member name="P:Takenet.Textc.ITextCursor.IsEmpty">
+            <summary>
+            Indicates if the cursor is empty.
+            </summary>
+        </member>
+        <member name="M:Takenet.Textc.ITextCursor.Next">
+            <summary>
+            Extracts the current token and advances the cursor.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Textc.ITextCursor.All">
+            <summary>
+            Gets all remaining text from the cursor.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Textc.ITextCursor.SavePosition">
+            <summary>
+            Saves the current cursor position to allow further rollback.
+            </summary>
+        </member>
+        <member name="M:Takenet.Textc.ITextCursor.RollbackPosition">
+            <summary>
+            Rollbacks the cursor to the last saved position.
+            </summary>
+        </member>
+        <member name="M:Takenet.Textc.ITextCursor.Peek">
+            <summary>
+            Gets a preview of the next available token without advancing the cursor position.
+            </summary>
+        </member>
+        <member name="M:Takenet.Textc.ITextCursor.InvertParsing">
+            <summary>
+            Inverts the cursor parse direction.
+            </summary>
+        </member>
+        <member name="M:Takenet.Textc.ITextCursor.Reset">
+            <summary>
+            Returns to the initial position.
+            </summary>
+        </member>
+        <member name="T:Takenet.Textc.ITextProcessor">
+            <summary>
+            Defines a text processor service that processes the user inputs based on the syntaxes defined in the command processors.
+            </summary>
+        </member>
+        <member name="P:Takenet.Textc.ITextProcessor.CommandProcessors">
+            <summary>
+            Gets the collection of registered command processors.
+            </summary>
+        </member>
+        <member name="P:Takenet.Textc.ITextProcessor.TextPreprocessors">
+            <summary>
+            Gets the collection of registered text preprocessors.
+            </summary>
+        </member>
+        <member name="M:Takenet.Textc.ITextProcessor.ProcessAsync(System.String,Takenet.Textc.IRequestContext,System.Threading.CancellationToken)">
+            <summary>
+            Processes an input text using the registered command processors.
+            </summary>
+            <param name="inputText">The user input text.</param>
+            <param name="context">The request context information.</param>
+            <param name="cancellationToken">The cancellation token for the execution task.</param>
+            <returns></returns>       
+        </member>
+        <member name="T:Takenet.Textc.ITextSplitter">
+            <summary>
+            Defines a service for splitting a text input into multiple strings.
+            </summary>
+        </member>
+        <member name="M:Takenet.Textc.ITextSplitter.Split(System.String)">
+            <summary>
+            Splits an input text into multiple sentences for processing.
+            </summary>
+            <param name="inputText"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Takenet.Textc.MatchNotFoundException">
+            <summary>
+            Occurs when there is no match available for the provided input.
+            </summary>
+        </member>
+        <member name="M:Takenet.Textc.MatchNotFoundException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Takenet.Textc.MatchNotFoundException" /> class.
+            </summary>
+            <param name="inputText">The input text.</param>
+        </member>
+        <member name="M:Takenet.Textc.MatchNotFoundException.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Takenet.Textc.MatchNotFoundException" /> class.
+            </summary>
+            <param name="inputText">The input text.</param>
+            <param name="message">The exception message.</param>
+        </member>
+        <member name="P:Takenet.Textc.MatchNotFoundException.InputText">
+            <summary>
+            Gets the input that caused the exception.
+            </summary>
+        </member>
+        <member name="T:Takenet.Textc.PreProcessors.ITextPreprocessor">
+            <summary>
+            Defines a text preprocessor service that allow the input to be changed before be parsed with a syntax.
+            </summary>
+        </member>
+        <member name="P:Takenet.Textc.PreProcessors.ITextPreprocessor.Priority">
+            <summary>
+            Gets the processor priority relative to other preprocessors.
+            </summary>
+        </member>
+        <member name="M:Takenet.Textc.PreProcessors.ITextPreprocessor.ProcessTextAsync(System.String,Takenet.Textc.IRequestContext,System.Threading.CancellationToken)">
+            <summary>
+            Executes the text preprocessing.
+            </summary>
+        </member>
+        <member name="T:Takenet.Textc.PreProcessors.SpellCorrect">
+            <summary>
+            http://www.codegrunt.co.uk/2010/11/02/C-Sharp-Norvig-Spelling-Corrector.html
+            </summary>
+        </member>
+        <member name="T:Takenet.Textc.PreProcessors.TextNormalizerPreprocessor">
+            <summary>
+            Remove double spaces, punctuation and special characters from the user input.
+            </summary>
+            <seealso cref="T:Takenet.Textc.PreProcessors.ITextPreprocessor" />
+        </member>
+        <member name="M:Takenet.Textc.PreProcessors.TextNormalizerPreprocessor.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Takenet.Textc.PreProcessors.TextNormalizerPreprocessor"/> class.
+            </summary>
+        </member>
+        <member name="M:Takenet.Textc.PreProcessors.TextNormalizerPreprocessor.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Takenet.Textc.PreProcessors.TextNormalizerPreprocessor"/> class.
+            </summary>
+            <param name="priority">The priority.</param>
+        </member>
+        <member name="T:Takenet.Textc.PreProcessors.ToLowerCasePreprocessor">
+            <summary>
+            Converts the input text to lower case.
+            </summary>
+            <seealso cref="T:Takenet.Textc.PreProcessors.ITextPreprocessor" />
+        </member>
+        <member name="M:Takenet.Textc.PreProcessors.ToLowerCasePreprocessor.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Takenet.Textc.PreProcessors.ToLowerCasePreprocessor"/> class.
+            </summary>
+        </member>
+        <member name="M:Takenet.Textc.PreProcessors.ToLowerCasePreprocessor.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Takenet.Textc.PreProcessors.ToLowerCasePreprocessor"/> class.
+            </summary>
+            <param name="priority">The priority.</param>
+        </member>
+        <member name="T:Takenet.Textc.Processors.DelegateCommandProcessor">
+            <summary>
+            Processes commands using delegates.
+            </summary>
+        </member>
+        <member name="T:Takenet.Textc.Processors.ICommandProcessor">
+            <summary>
+            Defines expression processor service.
+            </summary>
+        </member>
+        <member name="P:Takenet.Textc.Processors.ICommandProcessor.Syntaxes">
+            <summary>
+            Gets the processor associated syntaxes.
+            </summary>
+        </member>
+        <member name="M:Takenet.Textc.Processors.ICommandProcessor.ProcessAsync(Takenet.Textc.Expression,System.Threading.CancellationToken)">
+            <summary>
+            Processes an expression.
+            </summary>
+            <param name="expression"></param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="P:Takenet.Textc.Processors.ICommandProcessor.OutputProcessor">
+            <summary>
+            Gets the associated <see cref="T:Takenet.Textc.Processors.IOutputProcessor" /> instance.
+            This value can be null.
+            </summary>
+        </member>
+        <member name="T:Takenet.Textc.Processors.IOutputProcessor">
+            <summary>
+            Defines a output processor that handles the result of a expression processing by a command processor.
+            </summary>
+        </member>
+        <member name="M:Takenet.Textc.Processors.IOutputProcessor.ProcessOutputAsync(System.Object,Takenet.Textc.IRequestContext,System.Threading.CancellationToken)">
+            <summary>
+            Processes the given command output.
+            </summary>
+            <param name="output">The output object.</param>
+            <param name="context">The request context.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Takenet.Textc.Processors.ReflectionCommandProcessor">
+            <summary>
+            Processes commands using type reflection.
+            </summary>
+        </member>
+        <member name="T:Takenet.Textc.Processors.TypeUtil">
+            <summary>
+            Utility methods for handling types.
+            </summary>
+        </member>
+        <member name="T:Takenet.Textc.RequestContext">
+            <summary>
+            Defines a context that uses an internal dictionary to store the variables.
+            </summary>
+        </member>
+        <member name="M:Takenet.Textc.RequestContextExtensions.GetVariable``1(Takenet.Textc.IRequestContext,System.String)">
+            <summary>
+            Gets an existing variable value from the context.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="context"></param>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Takenet.Textc.Scorers.RatioExpressionScorer">
+            <summary>
+            Scores using ratio of the expression matched tokens by the total syntax possible token matches.
+            </summary>
+        </member>
+        <member name="T:Takenet.Textc.Scorers.MatchCountExpressionScorer">
+            <summary>
+            Scores by counting the matched tokens in the expression.
+            </summary>
+        </member>
+        <member name="T:Takenet.Textc.TextcException">
+            <summary>
+            Base class for the library exceptions.
+            </summary>
+        </member>
+        <member name="M:Takenet.Textc.TextcException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Takenet.Textc.TextcException" /> class.
+            </summary>
+        </member>
+        <member name="M:Takenet.Textc.TextcException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Takenet.Textc.TextcException" /> class.
+            </summary>
+            <param name="message">The message that describes the error.</param>
+        </member>
+        <member name="M:Takenet.Textc.TextcException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Takenet.Textc.TextcException" /> class.
+            </summary>
+            <param name="message">The error message that explains the reason for the exception.</param>
+            <param name="innerException">
+            The exception that is the cause of the current exception, or a null reference (Nothing in
+            Visual Basic) if no inner exception is specified.
+            </param>
+        </member>
+        <member name="T:Takenet.Textc.Syntax">
+            <summary>
+            Defines a text structure with token types that can be used to parse a text input into a <see cref="T:Takenet.Textc.Expression" />.
+            </summary>
+        </member>
+        <member name="M:Takenet.Textc.Syntax.#ctor(Takenet.Textc.Types.ITokenType[],System.Boolean,System.Boolean,System.Globalization.CultureInfo)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Takenet.Textc.Syntax" /> class.
+            </summary>
+            <param name="tokenTypes">The token types.</param>
+            <param name="rightToLeftParsing">Indicates if the parsing should be done from the right to the left direction..</param>
+            <param name="perfectMatchOnly">Indicates if the syntax requires that all input should be consumed in order to satisfy it.</param>
+            <param name="culture">The syntax culture.</param>
+        </member>
+        <member name="P:Takenet.Textc.Syntax.TokenTypes">
+            <summary>
+            Gets the syntax token types.
+            </summary>
+        </member>
+        <member name="P:Takenet.Textc.Syntax.RightToLeftParsing">
+            <summary>
+            Indicates if the parsing should be done from the right to the left direction.
+            </summary>
+        </member>
+        <member name="P:Takenet.Textc.Syntax.PerfectMatchOnly">
+            <summary>
+            Indicates if the syntax requires that all input should be consumed in order to satisfy it.
+            </summary>
+        </member>
+        <member name="P:Takenet.Textc.Syntax.Culture">
+            <summary>
+            The syntax culture. If the culture is <see cref="P:System.Globalization.CultureInfo.InvariantCulture"/>, it will be valid to contexts of any culture.
+            </summary>        
+        </member>
+        <member name="M:Takenet.Textc.Syntax.ToString">
+            <summary>
+            Returns a <see cref="T:System.String" /> that represents this instance.
+            </summary>
+            <returns>
+            A <see cref="T:System.String" /> that represents this instance.
+            </returns>
+        </member>
+        <member name="T:Takenet.Textc.SyntaxParser">
+            <summary>
+            The default syntax parser implementation.
+            </summary>
+        </member>
+        <member name="T:Takenet.Textc.Types.DecimalTokenType">
+            <summary>
+            Represents a decimal number token type.
+            </summary>
+        </member>
+        <member name="T:Takenet.Textc.Types.IntegerTokenType">
+            <summary>
+            Represents an integer number token type.
+            </summary>
+        </member>
+        <member name="T:Takenet.Textc.Types.ITokenType">
+            <summary>
+            Represents a syntax token type that defines how tokens should be generated by a given text input.
+            </summary>
+        </member>
+        <member name="P:Takenet.Textc.Types.ITokenType.Name">
+            <summary>
+            Gets the name of the token.
+            </summary>
+        </member>
+        <member name="P:Takenet.Textc.Types.ITokenType.IsContextual">
+            <summary>
+            Gets a value indicating whether the token value should added to the context.
+            </summary>
+            <value>
+            <c>true</c> the token value should be added to the context; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Takenet.Textc.Types.ITokenType.IsOptional">
+            <summary>
+            Gets a value indicating whether this instance is optional.
+            </summary>
+            <value>
+            <c>true</c> if this instance is optional; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Takenet.Textc.Types.ITokenType.InvertParsing">
+            <summary>
+            Gets a value indicating whether the parsing direction should inverted in the position of the current token.
+            </summary>
+            <value>
+            <c>true</c> if the parsing direction should be inverted; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:Takenet.Textc.Types.ITokenType.TryGetTokenFromInput(Takenet.Textc.ITextCursor,System.Object@)">
+            <summary>
+            Tries to get a token from the input cursor.
+            </summary>
+            <param name="textCursor">The text cursor.</param>
+            <param name="token">The extracted token.</param>
+            <returns><c>true</c> if a token is extracted successfully; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Takenet.Textc.Types.ITokenType.TryGetTokenFromContext(Takenet.Textc.IRequestContext,System.Object@)">
+            <summary>
+            Tries to get a token from the context.
+            </summary>
+            <param name="context">The request context.</param>
+            <param name="token">The extracted token.</param>
+            <returns><c>true</c> if a token is extracted successfully; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Takenet.Textc.Types.DoubleMetaphoneWordTokenType.GenerateDoubleMetaphone(System.String)">
+            <summary>
+            Generates the double metaphone key.
+            Source: http://doublemetaphone.googlecode.com/
+            Copyright (c) 2008 Anthony Tong Lee
+            </summary>
+            <param name="self">The self.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Textc.Types.SoundexWordTokenType.Soundex(System.String)">
+            <summary>
+            Gets the soundex code for the specified word.
+            Source: http://rosettacode.org/wiki/Soundex#C.23
+            </summary>
+            <param name="word">The word.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Textc.Types.StringExtensions.CalculateLevenshteinDistance(System.String,System.String)">
+            <summary>
+            Compute the editing distance between two strings.
+            </summary>
+            <param name="s">The first of the two strings.</param>
+            <param name="t">The second of the two strings.</param>
+            <returns>The Levenshtein cost.</returns>
+            Source: http://rosettacode.org/wiki/Levenshtein_distance#C.23
+        </member>
+        <member name="T:Takenet.Textc.Types.TokenType`1">
+            <summary>
+            Base class for token types.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:Takenet.Textc.TextCursor">
+            <summary>
+            Defines a cursor that extracts a token for each word in a text.
+            </summary>
+        </member>
+        <member name="M:Takenet.Textc.TextCursor.#ctor(System.String,Takenet.Textc.IRequestContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Takenet.Textc.TextCursor" /> class.
+            </summary>
+            <param name="inputText">The input text.</param>
+            <param name="context">The context.</param>
+            <exception cref="T:System.ArgumentNullException">inputText</exception>
+        </member>
+        <member name="M:Takenet.Textc.TextCursor.ToString">
+            <summary>
+            Returns a <see cref="T:System.String" /> that represents this instance.
+            </summary>
+            <returns>
+            A <see cref="T:System.String" /> that represents this instance.
+            </returns>
+        </member>
+        <member name="P:Takenet.Textc.TextCursor.Context">
+            <summary>
+            Gets the context where the cursor was created.
+            </summary>
+        </member>
+        <member name="M:Takenet.Textc.TextCursor.Next">
+            <summary>
+            Extracts the current token and advances the cursor.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Textc.TextCursor.All">
+            <summary>
+            Gets all remaining text from the cursor.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Textc.TextCursor.SavePosition">
+            <summary>
+            Saves the current cursor position to allow further rollback.
+            </summary>
+        </member>
+        <member name="M:Takenet.Textc.TextCursor.RollbackPosition">
+            <summary>
+            Rollbacks the cursor to the last saved position.
+            </summary>
+        </member>
+        <member name="M:Takenet.Textc.TextCursor.Peek">
+            <summary>
+            Gets a preview of the next available token without advancing the cursor position.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Takenet.Textc.TextCursor.RightToLeftParsing">
+            <summary>
+            Gets the current parse direction.
+            </summary>
+        </member>
+        <member name="M:Takenet.Textc.TextCursor.InvertParsing">
+            <summary>
+            Inverts the cursor parse direction.
+            </summary>
+        </member>
+        <member name="M:Takenet.Textc.TextCursor.Reset">
+            <summary>
+            Returns to the initial position.
+            </summary>
+        </member>
+        <member name="P:Takenet.Textc.TextCursor.IsEmpty">
+            <summary>
+            Indicates if the cursor is empty.
+            </summary>
+        </member>
+        <member name="T:Takenet.Textc.TextProcessor">
+            <summary>
+            The default <see cref="T:Takenet.Textc.ITextProcessor" /> implementation.
+            </summary>
+        </member>
+        <member name="M:Takenet.Textc.TextProcessor.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Takenet.Textc.TextProcessor" /> class.
+            </summary>
+        </member>
+        <member name="M:Takenet.Textc.TextProcessor.#ctor(Takenet.Textc.ITextSplitter)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Takenet.Textc.TextProcessor" /> class.
+            </summary>
+        </member>
+        <member name="M:Takenet.Textc.TextProcessor.#ctor(Takenet.Textc.ISyntaxParser,Takenet.Textc.Scorers.IExpressionScorer,Takenet.Textc.ITextSplitter)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Takenet.Textc.TextProcessor" /> class.
+            </summary>
+        </member>
+        <member name="T:Takenet.Textc.Token">
+            <summary>
+            Represents a text token.
+            </summary>
+        </member>
+        <member name="M:Takenet.Textc.Token.#ctor(System.Object,Takenet.Textc.TokenSource,Takenet.Textc.Types.ITokenType)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Takenet.Textc.Token" /> class.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="source">The source.</param>
+            <param name="type">The type.</param>
+        </member>
+        <member name="P:Takenet.Textc.Token.Value">
+            <summary>
+            Gets the token value.
+            </summary>
+        </member>
+        <member name="P:Takenet.Textc.Token.Source">
+            <summary>
+            Gets the source extraction source.
+            </summary>
+        </member>
+        <member name="P:Takenet.Textc.Token.Type">
+            <summary>
+            Gets the associated token type.
+            </summary>
+        </member>
+        <member name="T:Takenet.Textc.TokenSource">
+            <summary>
+            Indicates the source of the extraction of a token.
+            </summary>
+        </member>
+        <member name="F:Takenet.Textc.TokenSource.Input">
+            <summary>
+            The token was extracted from the user input.
+            </summary>
+        </member>
+        <member name="F:Takenet.Textc.TokenSource.Context">
+            <summary>
+            The token was extracted from the request context.
+            </summary>
+        </member>
+    </members>
+</doc>
